@@ -1,9 +1,31 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
+    Your current profile
+  </div>
+
+  <div class="panel-body">
+    <h5>Full Name</h5>
+    <p><%= @profile.full_name %></p>
+
+    <hr>
+
+    <h5>Adress</h5>
+    <p><%= @profile.street_name %> <%= @profile.house_number %> <%= @profile.addition %> </p>
+    <p><%= @profile.postal_code %> <%= @profile.city %> <%= @profile.country %> </p>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
     Edit your profile
   </div>
 
   <div class="panel-body">
+
     <%= render 'form' %>
   </div>
 </div>
+
+
+
+
