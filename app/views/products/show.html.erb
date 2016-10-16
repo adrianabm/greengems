@@ -6,5 +6,11 @@
   <h4>Price</h4>
   <p><%= @product.price %></p>
 
+  <h4>Photos</h4>
+  <% @product.photos.each do |photo| %>
+      <%= image_tag photo.image %>
+  <% end %>
+
+
   <%= link_to "Back", root_path, class: "btn btn-default" %>
 
