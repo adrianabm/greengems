@@ -1,10 +1,20 @@
-<h3 class="text-center">Products of the Month </h3>
-
-<div class="row">
-  <div class="col-xs-6 col-xs-offset-3">
-    <% @products.each do |product| %>
-        <%= render "product_row",  product: product, order_item: @order_item %>
-  <% end %>
-  </div>
+<div class="jumbotron">
+  <h1 class="page-title">Green Gems</h1>
+  <p class="paragraph-intro">Welcome to Green Gems Shop</p>
 </div>
 
+<div class="container">
+  <div>
+    <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+  </div>
+
+  <h3 class="text-center">Products of the Month </h3>
+
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <% @products.each do |product| %>
+          <%= render "product_row",  product: product, order_item: @order_item %>
+    <% end %>
+    </div>
+  </div>
+</div>
