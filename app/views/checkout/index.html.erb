@@ -1,0 +1,17 @@
+<p> This page should: </p>
+<ul>
+  <li> show an overview of selected items (text only + price) </li>
+  <li> load user profile if user has one </li>
+  <li> If user does not have a profile, page should show form to fill in shipping information </li>
+  <li> Done: Show a submit button to finish order </li>
+  <li> Done: Submit button should link to order places page </li>
+
+<br>
+
+<form action="checkout/show.html">
+  <input type="submit" value="Confirm your order" />
+</form>
+
+<div class="shopping-cart">
+  <%= render "product_overview" %>
+</div>
