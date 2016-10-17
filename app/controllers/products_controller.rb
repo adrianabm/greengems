@@ -1,7 +1,5 @@
 class ProductsController < ApplicationController
 
-  validates :name, presence: true
-  validates :price, presence: true
   def index
     @products = Product.all
     @order_item = current_order.order_items.new

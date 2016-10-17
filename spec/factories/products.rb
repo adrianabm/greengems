@@ -6,13 +6,14 @@ FactoryGirl.define do
     active        true
     photos        { Faker::Avatar.image }
 
-    trait :active do
-      active true
-    end
-
-    trait :inactive do
-      active false
+  #   trait :active do
+  #     active true
+  #   end
+  #
+  #   trait :inactive do
+  #     active false
+  #
+  # end
 
   end
-
 end
