@@ -1,18 +1,22 @@
 <div class="container">
 
-  <h3 class="text-center"><%= @product.name %></h5>
+  <h2><%= @product.name %></h2>
 
-  <h4 class="text-center">Product Description<h4>
-  <p class="text-center"><%= @product.description %></p>
+  <h4 class="show-plants">Product Description<h4>
+  <p class="product-description"><%= @product.description %></p>
 
-  <h4 class="text-center">Price</h4>
-  <p><%= @product.price %></p>
+  <h4 class="show-plants">Price</h4>
+  <p class="product-description"><%= @product.price %></p>
 
-  <h4 class="text-center">Photos</h4>
-  <% @product.photos.each do |photo| %>
-      <%= image_tag photo.image %>
-  <% end %>
+  <div>
+    <h4 class="show-plants">Photos</h4>
+    <% @product.photos.each do |photo| %>
+        <%= image_tag photo.image.thumbnail %>
+    <% end %>
+  </div>
 
-  <%= link_to "Back", root_path, class: "btn btn-default" %>
 
+  <div class="back-button">
+    <%= link_to "Back", root_path, class: "btn btn-default" %>
+  </div>
 </div>
