@@ -3,16 +3,9 @@
   <head>
     <title>ShoppingCart</title>
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <% if request.ssl? %>
-        <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-        <%= javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
-    <% else %>
-        <%= stylesheet_link_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-        <%= javascript_include_tag 'http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
-    <% end %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
     <%= csrf_meta_tags %>
   </head>
@@ -21,6 +14,7 @@
   <!-- Static navbar -->
     <%= render 'shared/navbar' %>
     <div class="container">
+
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
