@@ -5,7 +5,7 @@ class User < ApplicationRecord
     profile.present?
   end
 
-  def full_nameπ
+  def full_name
     profile.full_name
   end
 
