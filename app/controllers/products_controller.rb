@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+  validates :name, presence: true
+  validates :price, presence: true
   def index
     @products = Product.all
     @products = Product.search(params[:search]) unless params[:search].blank?
@@ -8,7 +11,6 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
   end
-
 
   private
     def product_params
