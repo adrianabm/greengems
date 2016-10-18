@@ -1,8 +1,8 @@
 <p> This page should: </p>
 <ul>
   <li> show an overview of selected items (text only + price) </li>
-  <li> load user profile if user has one </li>
-  <li> If user does not have a profile, page should show form to fill in shipping information </li>
+  <li> Done: load user profile if user has one </li>
+  <li> Done: If user does not have a profile, page should show form to fill in shipping information </li>
   <li> Done: Show a submit button to finish order </li>
   <li> Done: Submit button should link to order places page </li>
 
@@ -12,9 +12,20 @@
   <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
 </div>
 
-<form action="checkout/show.html">
-  <input type="submit" value="Confirm your order" />
-</form>
+<div class="require profile">
+<% if current_user.has_profile? %>
+  <li><form action="checkout/show.html">
+    <input type="submit" value="Confirm your order"/>
+  </form></li>
+<% else %>
+  <li>You have to create a profile before you can checkout</li>
+  <li><form action="/profiles/new">
+    <input type="submit" value="Create a Profile"/>
+  </form></li>
+  </div>
+<% end %>
+
+
 
 <div class="shopping-cart">
   <%= render "product_overview" %>
