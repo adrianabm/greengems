@@ -1,0 +1,21 @@
+<%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span><%="Total price: #{number_to_currency current_order.subtotal}" %></span>
+    </label>
+  </article>
+
+  <BR>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Your order at Green Gems"
+          data-panel-label="<%="Total price: #{number_to_currency current_order.subtotal}" %>"
+          data-locale="auto"></script>
+
+<% end %>

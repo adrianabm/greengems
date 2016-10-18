@@ -64,3 +64,4 @@ gem 'rails_12factor', group: :production
 
 gem 'factory_girl_rails', '4.7.0'
 gem 'faker', '1.6.6'
+gem 'stripe'
