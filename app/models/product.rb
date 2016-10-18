@@ -1,7 +1,6 @@
 class Product < ApplicationRecord
   has_many :photos
   has_many :order_items
-
   default_scope { where(active: true) }
 
   validates :name, presence: true
@@ -11,6 +10,5 @@ class Product < ApplicationRecord
   def self.search(search)
     Product.where('name ILIKE :search OR description ILIKE :search', search: "%#{search}%")
   end
-
 
 end
