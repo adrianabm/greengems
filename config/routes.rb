@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'order_items/destroy'
 
-  get 'carts/show'
+  get "/pages/:page" => "pages#show"
 
   get 'pages/home'
 
@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resource :cart, only: [:show]
   resources :checkout
   resources :charges
+  resources :pages
+  resources :shared
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
