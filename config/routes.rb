@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post '/add_to_cart/:product_id' => 'cart#add_to_cart', :as => 'add_to_cart'
 
   resources :profiles, only: [:new, :edit, :create, :update]
-  resources :products, only: [:show, :index]
+  resources :products
   resources :photos
   resources :order_items
   resource :cart, only: [:show]
