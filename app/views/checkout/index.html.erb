@@ -15,7 +15,7 @@
 <div class="require profile">
 <% if current_user.has_profile? %>
   <li><form action="charges/new.html">
-    <input type="submit" value="Confirm and pay our order"/>
+    <input class="btn btn-default" type="submit" value="Confirm and pay our order"/>
   </form></li>
 <% else %>
   <li>You have to create a profile before you can checkout</li>
