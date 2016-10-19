@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @photos = @product.photos
   end
 
   def new
@@ -15,26 +16,35 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new( product_params )
+    @product = Product.build( product_params )
 
     if @product.save
-       redirect_to @product
+      image_params.each do |image|
+      @product.photos.create(image: image)
+    end
+
+       redirect_to edit_product_path(@product), notice: "Product successfully created"
     else
-       render 'new'
+       render :new
     end
   end
 
   def edit
     @product = Product.find(params[:id])
+    @photos = @product.photos
   end
 
   def update
     @product = Product.find( params[:id] )
 
-    if @product.update_attributes( product_params )
-       redirect_to @product
+    if @product.update( product_params )
+      image_params.each do |image|
+      @product.photos.create(image: image)
+    end
+
+       redirect_to product_path(@product), notice: "Product successfully updated"
     else
-       render 'edit'
+       render :edit
     end
   end
 
@@ -49,6 +59,10 @@ class ProductsController < ApplicationController
   private
     def product_params
       params.require(:product).permit(:name, :description, :price, :active)
+    end
+
+    def image_params
+      params[:images].present? ? params.require(:images) : []
     end
 
 end
