@@ -11,4 +11,20 @@ class Product < ApplicationRecord
     Product.where('name ILIKE :search OR description ILIKE :search', search: "%#{search}%")
   end
 
+  def self.atoz
+    Product.order(name: :asc)
+  end
+
+  def self.ztoa
+    Product.order(name: :desc)
+  end
+
+  def self.priceup
+    Product.order(price: :asc)
+  end
+
+  def self.pricedown
+    Product.order(price: :desc)
+  end
+
 end

@@ -58,6 +58,30 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+  def atoz
+    @products = Product.atoz
+    @order_item = current_order.order_items.new
+    render action: :index
+  end
+
+  def ztoa
+    @products = Product.ztoa
+    @order_item = current_order.order_items.new
+    render action: :index
+  end
+
+  def priceup
+    @products = Product.priceup
+    @order_item = current_order.order_items.new
+    render action: :index
+  end
+
+  def pricedown
+    @products = Product.pricedown
+    @order_item = current_order.order_items.new
+    render action: :index
+  end
+
   private
     def product_params
       params.require(:product).permit(:name, :description, :price, :active)
