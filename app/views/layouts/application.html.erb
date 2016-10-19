@@ -18,5 +18,15 @@
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
+
+  <script>
+    // A $( document ).ready() block.
+    $( document ).ready(function() {
+    	$( '.trigger' ).click(function() {
+    	  $( ".highlight" ).toggle( "highlight" );
+    	});
+    });
+</script>
+
   </body>
 </html>
