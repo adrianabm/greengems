@@ -15,7 +15,7 @@
     <%= link_to "Price down", pricedown_products_path, class: "link" %>
   </div>
 
-  <%= form_tag products_path, :products => 'get' do %>
+  <%= form_tag products_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
