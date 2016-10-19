@@ -33,7 +33,9 @@
   </div>
 
   <div class="text-center">
+    <% if can? :update, @product %>
     <%= link_to "New Product", new_product_path, class: "btn btn-default"  %>
+    <% end %>
   </div>
 
 

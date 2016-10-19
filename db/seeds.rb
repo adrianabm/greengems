@@ -5,9 +5,9 @@ User.delete_all
 
 
 # Users
-User.create(email: "miriam@codaisseurbnb.com", password: "secret")
-User.create(email: "ben@codaisseurbnb.com", password: "secret")
-User.create(email: "adrianabm@gmail.com", password: "123456")
+User.create(email: "miriam@codaisseurbnb.com", password: "secret", role: "admin")
+User.create(email: "ben@codaisseurbnb.com", password: "secret", role: "guest")
+User.create(email: "adrianabm@gmail.com", password: "123456", role:"guest")
 
 # Photos
 photo1 = Photo.create(remote_image_url: "http://res.cloudinary.com/dq7saz15g/image/upload/v1476611740/plant4_uzuhms.jpg")
