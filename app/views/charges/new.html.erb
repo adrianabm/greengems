@@ -1,3 +1,5 @@
+
+<div>
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
@@ -9,6 +11,7 @@
       <span><%="Total price: #{number_to_currency current_order.subtotal}" %></span>
     </label>
   </article>
+</div>
 
   <BR>
 
