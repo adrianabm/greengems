@@ -11,7 +11,11 @@
   <div>
       <h4 class="show-plants">Photos</h4>
       <% @product.photos.each do |photo| %>
-      <%= image_tag photo.image.thumbnail %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= image_tag photo.image.thumbnail %>
+        </div>
+      </div>
       <% end %>
   </div>
 
