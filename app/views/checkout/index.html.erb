@@ -1,16 +1,30 @@
-<p> This page should: </p>
-<ul>
-  <li> show an overview of selected items (text only + price) </li>
-  <li> Done: load user profile if user has one </li>
-  <li> Done: If user does not have a profile, page should show form to fill in shipping information </li>
-  <li> Done: Show a submit button to finish order </li>
-  <li> Done: Submit button should link to order places page </li>
-
+<h1 class="page-title">Overview of products:</h1>
 <br>
-
 <div>
   <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
 </div>
+<br>
+
+<table class=checkout-table>
+  <tr class="checkout-tablerow">
+    <th class="checkout-tableheader"> Product </th>
+    <th class="checkout-tableheader"> Price </th>
+    <th class="checkout-tableheader"> Quantity </th>
+    <th class="checkout-tableheader"> Total Price </th>
+  </tr>
+<% @order_items.each do |order_item| %>
+  <table class=checkout-table>
+    <tr class="checkout-tablerow">
+    </tr>
+      <td class="checkout-tableelement"><%="#{order_item.product.name}"%></td>
+      <td class="checkout-tableelement"><%="#{order_item.unit_price}"%> </td>
+      <td class="checkout-tableelement"><%="#{order_item.quantity}"%></td>
+      <td class="checkout-tableelement"><%="#{order_item.quantity * order_item.unit_price}"%></td>
+  </table>
+<% end %>
+
+
+<BR>
 
 <div class="require profile">
 <% if current_user.has_profile? %>
@@ -24,8 +38,3 @@
   </form></li>
   </div>
 <% end %>
-
-
-<div class="shopping-cart">
-  <%= render "product_overview" %>
-</div>

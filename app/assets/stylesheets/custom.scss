@@ -119,3 +119,30 @@ ul {
 .btn-cart {
   margin: 10px;
 }
+
+.cartbutton {
+  text-align: center;
+  font-style: #EFE3C6;
+  font-family: helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.checkout-tableheader {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: left;
+}
+
+.checkout-table {
+  width: 80%;
+  table-layout: fixed;
+}
+
+.checkout-tablerow {
+}
+
+.checkout-tableelement{
+  border: 1px solid black;
+  padding: 5px;
+  text-align: left;
+}
