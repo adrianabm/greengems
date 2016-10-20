@@ -7,8 +7,6 @@ class ProductsController < ApplicationController
     @products = Product.all
     @products = Product.search(params[:search]) unless params[:search].blank?
     @order_item = current_order.order_items.new
-    @products = Product.order(sort_column + " " + sort_direction)
-
   end
 
   def show
@@ -21,14 +19,14 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.build( product_params )
+    @product = Product.create( product_params )
 
     if @product.save
       image_params.each do |image|
       @product.photos.create(image: image)
     end
 
-       redirect_to edit_product_path(@product), notice: "Product successfully created"
+       redirect_to product_path(@product), notice: "Product successfully created"
     else
        render :new
     end

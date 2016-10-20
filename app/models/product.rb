@@ -8,9 +8,9 @@ class Product < ApplicationRecord
   validates :price, presence: true
 
   def self.search(search)
-    Product.where('name ILIKE :search OR description ILIKE :search', search: "%#{search}%")
-  end
-
+     Product.where('name ILIKE :search OR description ILIKE :search', search: "%#{search}%")
+   end
+   
   def self.atoz
     Product.order(name: :asc)
   end
