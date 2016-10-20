@@ -26,7 +26,7 @@
       <%= submit_tag "Search", :name => nil %>
     </p>
   <% end %>
-  
+
 
   <h3 class="text-center">Our Plant Catalog</h3>
 
@@ -34,9 +34,11 @@
     <div class="col-xs-6 col-xs-offset-3">
       <% @products.each do |product| %>
           <%= render "product_row",  product: product, order_item: @order_item %>
+
     <% end %>
     </div>
   </div>
+
 
   <div class="text-center">
     <% if can? :create, @product %>
