@@ -1,12 +1,14 @@
 class ProductsController < ApplicationController
+  helper_method :sort_column, :sort_direction
   #before_action :authenticate_user!, except: [:index, :show]
-  load_and_authorize_resource
 
 
   def index
     @products = Product.all
     @products = Product.search(params[:search]) unless params[:search].blank?
     @order_item = current_order.order_items.new
+    @products = Product.order(sort_column + " " + sort_direction)
+
   end
 
   def show
@@ -89,6 +91,14 @@ class ProductsController < ApplicationController
 
     def image_params
       params[:images].present? ? params.require(:images) : []
+    end
+
+    def sort_column
+      Product.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 
 end
