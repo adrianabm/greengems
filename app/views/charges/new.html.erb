@@ -1,3 +1,72 @@
+<h1 class="page-title">Overview of products:</h1>
+<br>
+<div>
+  <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><strong>Order summary</strong></h3>
+      </div>
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table table-condensed">
+            <thead>
+            <tr>
+              <td class="text-left"><strong>Product</strong></td>
+              <td class="text-left"><strong>Price</strong></td>
+              <td class="text-left"><strong>Quantity</strong></td>
+              <td class="text-right"><strong>Total Price</strong></td>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- foreach ($order->lineItems as $line) or some such thing here -->
+            <% @order_items.each do |order_item| %>
+                <tr>
+                  <td class="text-left"><%="#{order_item.product.name}"%></td>
+                  <td class="text-left"><%="#{order_item.unit_price}"%></td>
+                  <td class="text-left"><%="#{order_item.quantity}"%></td>
+                  <td class="text-right"><%="#{order_item.quantity * order_item.unit_price}"%></td>
+                </tr>
+            <% end %>
+            <tr>
+              <td class="thick-line"></td>
+              <td class="thick-line"></td>
+              <td class="thick-line text-left">Subtotal</td>
+              <td class="thick-line text-right"><%="#{number_to_currency current_order.subtotal}" %>    </td>
+            </tr>
+            <tr>
+              <td class="no-line"></td>
+              <td class="no-line"></td>
+              <td class="no-line text-left">Shipping</td>
+              <td class="no-line text-right"><%="#{number_to_currency current_order.subtotal * 0.15 }" %></td>
+            </tr>
+            <tr>
+              <td class="no-line"></td>
+              <td class="no-line"></td>
+              <td class="no-line text-left"><strong>Total</strong></td>
+              <td class="no-line text-right"><%="#{number_to_currency current_order.subtotal * 1.15}" %></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<BR>
+
+
+
+
+
+
+
 
 <div>
 <%= form_tag charges_path do %>
@@ -7,18 +76,13 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span><%="Total price: #{number_to_currency current_order.subtotal}" %></span>
-    </label>
   </article>
 </div>
-
-  <BR>
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Your order at Green Gems"
-          data-panel-label="<%="Total price: #{number_to_currency current_order.subtotal}" %>"
+          data-panel-label="<%="Total price: #{number_to_currency current_order.subtotal * 1.15}" %>"
           data-locale="auto"></script>
 
 <% end %>

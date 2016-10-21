@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
 
   def new
+    @order_items = current_order.order_items
     render layout: 'application'
   end
 
