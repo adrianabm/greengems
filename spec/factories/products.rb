@@ -4,16 +4,15 @@ FactoryGirl.define do
     price        { Faker::Commerce.price }
     description  { Faker::Lorem.sentence(10) }
     active        true
-    photos        { Faker::Avatar.image }
+    photos { build_list :photo, 3 }
 
-  #   trait :active do
-  #     active true
-  #   end
-  #
-  #   trait :inactive do
-  #     active false
-  #
-  # end
+    trait :inactive do
+      active false
+    end
 
+  end
+
+  factory :photo do
+    image        { Faker::Avatar.image }
   end
 end
