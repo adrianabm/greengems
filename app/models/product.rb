@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   has_many :photos
   has_many :order_items
+  belongs_to :user, optional: true
   default_scope { where(active: true) }
 
   validates :name, presence: true
