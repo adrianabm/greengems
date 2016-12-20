@@ -1,7 +1,5 @@
 class ProductsController < ApplicationController
   helper_method :sort_column, :sort_direction
-  #before_action :authenticate_user!, except: [:index, :show]
-
 
   def index
     @products = Product.all
@@ -25,8 +23,8 @@ class ProductsController < ApplicationController
       image_params.each do |image|
       @product.photos.create(image: image)
     end
+    redirect_to product_path(@product), notice: "Product successfully created"
 
-       redirect_to product_path(@product), notice: "Product successfully created"
     else
        render :new
     end
@@ -44,10 +42,10 @@ class ProductsController < ApplicationController
       image_params.each do |image|
       @product.photos.create(image: image)
     end
+    redirect_to product_path(@product), notice: "Product successfully updated"
 
-       redirect_to product_path(@product), notice: "Product successfully updated"
     else
-       render :update
+      render :update
     end
   end
 
@@ -83,20 +81,12 @@ class ProductsController < ApplicationController
   end
 
   private
-    def product_params
-      params.require(:product).permit(:name, :description, :price, :active)
-    end
 
-    def image_params
-      params[:images].present? ? params.require(:images) : []
-    end
+  def product_params
+    params.require(:product).permit(:name, :description, :price, :active)
+  end
 
-    def sort_column
-      Product.column_names.include?(params[:sort]) ? params[:sort] : "name"
-    end
-
-    def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-    end
-
+  def image_params
+    params[:images].present? ? params.require(:images) : []
+  end
 end

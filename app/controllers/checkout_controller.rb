@@ -6,6 +6,3 @@ class CheckoutController < ApplicationController
     @order_items = current_order.order_items
   end
 end
-
-def show
-end

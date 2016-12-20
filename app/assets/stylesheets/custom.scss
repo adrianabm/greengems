@@ -10,10 +10,6 @@ body {
   overflow: auto;
 }
 
-a {
-  color: #333333;
-}
-
 form {
   margin-bottom: 0px;
 }
@@ -115,6 +111,10 @@ ul {
    font-size: small;
    letter-spacing: 2px;
   }
+}
+
+.navbar-brand:hover {
+  color: #4BBF6B !important;
 }
 
 .page-plant-show {

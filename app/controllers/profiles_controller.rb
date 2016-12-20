@@ -15,9 +15,6 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
     if @profile.update(profile_params)
       redirect_to edit_profile_path(@profile), notice: "Profile successfully updated"
@@ -26,10 +23,8 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def show
-  end
-
   private
+  
   def set_profile
     @profile = current_user.profile
   end

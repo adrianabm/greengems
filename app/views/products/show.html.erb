@@ -1,39 +1,33 @@
 <div class="container">
-
   <h2><%= @product.name %></h2>
-
   <h4 class="page-plant-show">Product Description<h4>
   <p class="product-description"><%= @product.description %></p>
-
   <h4 class="page-plant-show">Price</h4>
   <p class="product-description"><%= @product.price %></p>
-
   <div>
-      <h4 class="page-plant-show">Photos</h4>
-      <% @product.photos.each do |photo| %>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <%= image_tag photo.image %>
-        </div>
+    <h4 class="page-plant-show">Photos</h4>
+    <% @product.photos.each do |photo| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= image_tag photo.image %>
       </div>
-      <% end %>
+    </div>
+    <% end %>
   </div>
 
   <div class="btn-inline">
     <div class="btn-back">
-        <%= link_to "Back", root_path, class: "btn btn-default" %>
+      <%= link_to "Back", root_path, class: "btn btn-default" %>
     </div>
-
     <div class="btn-back">
       <% if can? :update, @product %>
         <%= link_to "Edit", edit_product_path, class: "btn btn-default" %>
-        <% end %>
+      <% end %>
     </div>
-
     <div class="btn-back">
       <% if can? :delete, @product %>
         <%= link_to "Delete", product_path(@product.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
-        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

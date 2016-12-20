@@ -1,19 +1,14 @@
 <div class="btn-inline">
-
   <div class="btn-cart">
     <%= link_to "Continue Shopping", root_path, class: "btn btn-default" %>
   </div>
-
   <div class="btn-cart">
-  <form action="checkout.html">
-    <button type="submit" class="btn btn-default">Proceed to Checkout</button>
-  </form>
+    <form action="checkout.html">
+      <button type="submit" class="btn btn-default">Proceed to Checkout</button>
+    </form>
   </div>
-
 </div>
-
-<BR>
-
+<br>
 <div class="shopping-cart">
   <%= render "shopping_cart" %>
 </div>

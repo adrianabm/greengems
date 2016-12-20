@@ -1,53 +1,46 @@
 <%= form_for @profile do |f| %>
-    <% @profile.errors.full_messages.each do |msg| %>
-        <p class="alert alert-danger"><%= msg %></p>
-    <% end %>
+  <% @profile.errors.full_messages.each do |msg| %>
+    <p class="alert alert-danger"><%= msg %></p>
+<% end %>
 
-    <div class="form-group">
-      <label>First Name</label>
-      <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
-    </div>
+<div class="form-group">
+  <label>First Name</label>
+  <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+</div>
+<div class="form-group">
+  <label>Last Name</label>
+  <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+</div>
 
-    <div class="form-group">
-      <label>Last Name</label>
-      <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
-    </div>
+<hr>
 
-    <hr>
-
-    <div class="form-group">
-      <h4>Adress</h4>
-      <label>Street Name</label>
-      <%= f.text_field :street_name, placeholder: "Street Name", class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <label>House Number</label>
-      <%= f.text_field :house_number, placeholder: "House Number", class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <label>House Addition</label>
-      <%= f.text_field :addition, placeholder: "House Addition", class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <label>Postal Code</label>
-      <%= f.text_field :postal_code, placeholder: "Postal Code", class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <label>City</label>
-      <%= f.text_field :city, placeholder: "City", class: "form-control" %>
-    </div>
-
-    <div class="form-group">
-      <label>Country</label>
-      <%= f.text_field :country, placeholder: "Country", class: "form-control" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Save", class: "btn btn-primary" %>
-      <%= link_to "Back", root_path, class: "btn btn-default" %>
-    </div>
+<div class="form-group">
+  <h4>Adress</h4>
+  <label>Street Name</label>
+  <%= f.text_field :street_name, placeholder: "Street Name", class: "form-control" %>
+</div>
+<div class="form-group">
+  <label>House Number</label>
+  <%= f.text_field :house_number, placeholder: "House Number", class: "form-control" %>
+</div>
+<div class="form-group">
+  <label>House Addition</label>
+  <%= f.text_field :addition, placeholder: "House Addition", class: "form-control" %>
+</div>
+<div class="form-group">
+  <label>Postal Code</label>
+  <%= f.text_field :postal_code, placeholder: "Postal Code", class: "form-control" %>
+</div>
+<div class="form-group">
+  <label>City</label>
+  <%= f.text_field :city, placeholder: "City", class: "form-control" %>
+</div>
+<div class="form-group">
+  <label>Country</label>
+  <%= f.text_field :country, placeholder: "Country", class: "form-control" %>
+</div>
+<div class="actions">
+  <%= f.submit "Save", class: "btn btn-primary" %>
+  <%= link_to "Back", root_path, class: "btn btn-default" %>
+</div>
 <% end %>
