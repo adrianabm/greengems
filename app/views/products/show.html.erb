@@ -2,14 +2,14 @@
 
   <h2><%= @product.name %></h2>
 
-  <h4 class="show-plants">Product Description<h4>
+  <h4 class="page-plant-show">Product Description<h4>
   <p class="product-description"><%= @product.description %></p>
 
-  <h4 class="show-plants">Price</h4>
+  <h4 class="page-plant-show">Price</h4>
   <p class="product-description"><%= @product.price %></p>
 
   <div>
-      <h4 class="show-plants">Photos</h4>
+      <h4 class="page-plant-show">Photos</h4>
       <% @product.photos.each do |photo| %>
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -19,18 +19,18 @@
       <% end %>
   </div>
 
-  <div class="inline-btn">
-    <div class="back-button">
+  <div class="btn-inline">
+    <div class="btn-back">
         <%= link_to "Back", root_path, class: "btn btn-default" %>
     </div>
 
-    <div class="back-button">
+    <div class="btn-back">
       <% if can? :update, @product %>
         <%= link_to "Edit", edit_product_path, class: "btn btn-default" %>
         <% end %>
     </div>
 
-    <div class="back-button">
+    <div class="btn-back">
       <% if can? :delete, @product %>
         <%= link_to "Delete", product_path(@product.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
         <% end %>
