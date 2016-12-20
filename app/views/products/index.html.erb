@@ -28,23 +28,16 @@
               <li><%= link_to "Price down", pricedown_products_path, class: "link" %></li>
             </ul>
           </div>
-          <input type="hidden" name="search_param" value="all" id="search_param">
-          <input type="text" class="form-control" name="x" placeholder="Search term...">
-          <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                </span>
+          <%= form_tag products_path, :method => 'get' do %>
+          <div class="searchbar">
+            <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search product..." %>
+            <%= submit_tag "Search", :name => nil, class: "btn btn-default" %>
+          </div>
+        <% end %>
         </div>
       </div>
     </div>
   </div>
-
-    <%= form_tag products_path, :method => 'get' do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", :name => nil %>
-    </p>
-  <% end %>
-
 
   <h3 class="text-center">Our Plant Catalog</h3>
 
