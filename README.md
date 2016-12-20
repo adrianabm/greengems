@@ -17,7 +17,7 @@ By the end of the two weeks we spent building this webshop, we developed the fol
 8. Checkout and payment process
 9. Unit Tests
 
-## Installation
+## Getting Started
 
 1. Make sure [Ruby](https://www.ruby-lang.org/en/documentation/installation/) and [Rails](http://guides.rubyonrails.org/getting_started.html#installing-rails) are installed in your system
 
