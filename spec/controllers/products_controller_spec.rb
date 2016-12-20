@@ -1,5 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe ProductsController, type: :controller do
-
+describe ProductsController, type: :controller do
+  it "should get index" do
+    get :index
+    expect(response).to be_success
+    expect(:products).not_to eq(nil)
+  end
 end
