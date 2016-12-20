@@ -1,52 +1,54 @@
-# README
+# GreenGems | Rails online shop
 
-Welcome to the Green Gems website. This website is for all plant lovers who can to take their hobby to the next level with our world-class plants selection.
+Welcome to the Green Gems webshop! This Ruby on Rails application was built in the second and third week of the [Codaisseur](https://www.codaisseur.com/) traineeship program by a team of four students.
 
-Description of our website:
+![greengems-home-screenshot](https://cloud.githubusercontent.com/assets/20054414/21365737/ed43f498-c6f6-11e6-93b5-9106e71f3669.png)
 
-Homepage:
-Our homepage shows the following elements:
-- Navigationbar with:
-	Option to create an account
-	Sign in/sign out and create a profile
-	About page
-- Search bar and filters
-- Overview of our products with the option to view each product individually
-- Option to place products in shopping cart
-- Link to shopping cart
+## Features
+By the end of the two weeks we spent building this webshop, we developed the following features: 
 
-- Once entering the shopping cart the user can review their items.
-- Once shopping is finished a user can proceed to the checkoutprocedure
-- After filling in shipping information the user can proceed to the payment process.
+1. Registration and Sign In Process using the Devise gem
+2. Role Based Authorization using the CanCanCan gem - admins are able to create and delete products
+3. User Profile Page
+4. Catalog Display with all the available products
+5. Single Page Product
+6. Shopping cart using sessions; AJAX calls to update the cart when a product is added
+7. Sorting filters and search bar
+8. Checkout and payment process
+9. Unit Tests
 
-Screenshot of app:
-# Place screenshot here
+## Installation
 
+1. Make sure [Ruby](https://www.ruby-lang.org/en/documentation/installation/) and [Rails](http://guides.rubyonrails.org/getting_started.html#installing-rails) are installed in your system
 
-Steps followed when working on this app:
-This project was created by a team of four Codaisseur (Amsterdam) trainees.
-Our projectgroup took the following steps in order to deliver you Green Gems:
+2. Clone the repository
 
-- Initial project and database setup using Rails
-- Creating Github rep and collaboration structure
+3. Install all dependencies
+	```bash
+	bundle install
+	```
 
-Each team member thereafter worked on their own tasks and objectives. These roughly consisted of the following steps:
-- Creating models and controllers
-- Shopping cart and order process
-- Checkout and payment process
-- Unit and Integration testing
-- Search bar and filters
-- Creating product catalogue and product pages
-- Finetuning and styling
-- Deployment with Deis
+4. Create database and migrate schema; seed the database
+	```bash
+	rake db:create
+	rake db:migrate
+	rake db:seed
+	```
+	
+5. Run the application - it should be available on http://localhost:3000
+	```bash
+	rails s
+	```
 
-How to run the Green Gems app locally:
-- Clone/download GIT rep
-- bundle install
-- bundle exec rails db:create
-- bundle exec rails db:migrate
-- bundle exec rails db:seed
-- bundle exec rails server
+## Run the Tests
 
-Happy Gardening!
+We are using RSpec for the tests. To run it, just type the following in your command prompt:
+
+```bash
+ rspec
+```
+
+Happy Gardening!  
 Green Gems 2016
+
+Collaborators: @adrianabm, @annedien, @Sebastiaanpoppen, @tanjahennis 
