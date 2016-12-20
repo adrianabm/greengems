@@ -3,11 +3,14 @@
   <div class="row">
     <div class="col-xs-8">
       <h4><%= link_to product.name, product_path(product.id) %></small></h4>
-
-
+      <% product.photos.each do |photo| %>
+        <div class="thumbnail-pic">
+          <%= link_to image_tag(photo.image.thumbnail), product_path(product.id) %>
+        </div>
+      <% end %>
     </div>
-    <div class="col-xs-4">
 
+    <div class="col-xs-4">
       <%= form_for order_item, remote: true do |f| %>
           <h4 class="text-right">Price: <span style="color: green"><%= number_to_currency product.price %></span></h4>
           <div class="input-group">
