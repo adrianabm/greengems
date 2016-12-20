@@ -21,7 +21,7 @@ By the end of the two weeks we spent building this webshop, we developed the fol
 
 1. Make sure [Ruby](https://www.ruby-lang.org/en/documentation/installation/) and [Rails](http://guides.rubyonrails.org/getting_started.html#installing-rails) are installed in your system
 
-2. Clone the repository
+2. Clone the repository and enter the project directory
 
 3. Install all dependencies
 	```bash
