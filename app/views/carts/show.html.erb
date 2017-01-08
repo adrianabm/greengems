@@ -1,14 +1,23 @@
-<div class="btn-inline">
-  <div class="btn-cart">
-    <%= link_to "Continue Shopping", root_path, class: "btn btn-default" %>
+<div class="container padding-top-bottom">
+  <h3 class="text-center page-title">Your Shopping Cart</h3>
+  <br>
+
+  <div class="shopping-cart">
+    <%= render "shopping_cart" %>
   </div>
-  <div class="btn-cart">
-    <form action="checkout.html">
-      <button type="submit" class="btn btn-default">Proceed to Checkout</button>
-    </form>
+
+  <div class="float-right page-title">
+    <h4 class="text-right"><%="Subtotal: #{number_to_currency current_order.subtotal}" %></h4>
+    <br>
+    <div class="btn-inline">
+      <div class="btn-showpage">
+        <%= link_to "Continue Shopping", root_path, class: "btn btn-default" %>
+      </div>
+      <div class="btn-showpage">
+        <form action="checkout.html">
+          <button type="submit" class="btn btn-default">Proceed to Checkout</button>
+        </form>
+      </div>
+    </div>
   </div>
-</div>
-<br>
-<div class="shopping-cart">
-  <%= render "shopping_cart" %>
 </div>
