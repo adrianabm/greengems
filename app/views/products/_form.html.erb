@@ -1,15 +1,15 @@
 <%= form_for @product, html: { multipart: true } do |f| %>
   <div class="form-group">
     <label>Product Name</label>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control form-center" %>
   </div>
   <div class="form-group">
     <label>Description</label>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: "form-control form-center" %>
   </div>
   <div class="form-group">
     <label>Price</label>
-    <%= f.number_field :price, class: :text_field, step: :any %>
+    <%= f.number_field :price, class: :text_field, step: :any, class: "form-control form-center" %>
   </div>
   <div class="form-group">
     <label>Photos</label>
@@ -22,7 +22,7 @@
     <%= render 'photos/list' %>
   </div>
   <div class="actions">
-    <%= f.submit (@product.new_record? ? "Create" : "Update"), class: "btn btn-primary" %>
+    <%= f.submit (@product.new_record? ? "Create" : "Update"), class: "btn btn-default" %>
     <%= link_to "Back", root_path, class: "btn btn-default" %>
   </div>
 <% end %>
