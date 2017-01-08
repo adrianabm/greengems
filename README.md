@@ -2,7 +2,8 @@
 
 Welcome to the Green Gems webshop! This Ruby on Rails application was built in the second and third week of the [Codaisseur](https://www.codaisseur.com/) traineeship program by a team of four students.
 
-![greengems-home-screenshot](https://cloud.githubusercontent.com/assets/20054414/21365737/ed43f498-c6f6-11e6-93b5-9106e71f3669.png)
+![greengems-home-screenshot](https://cloud.githubusercontent.com/assets/20054414/21752457/91ae511e-d5d8-11e6-9f0d-fc25a9e3871e.png)
+
 
 ## Features
 By the end of the two weeks we spent building this webshop, we developed the following features: 
